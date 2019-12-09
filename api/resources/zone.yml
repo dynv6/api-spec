@@ -1,0 +1,84 @@
+---
+ZoneByID:
+  get:
+    tags: ["zones"]
+    summary: Get details of a zone.
+    description: |
+      Returns details of a specific zone by its ID that the current user has access to.
+    operationId: getZoneByID
+    parameters:
+      - name: id
+        in: path
+        description: ID of the zone to fetch
+        required: true
+        schema:
+          type: integer
+          format: int64
+    responses:
+      '200':
+        description: |
+          zone response.
+        content:
+          application/json:
+            schema:
+              $ref: '../models/zone.yml#/Zone'
+  patch:
+    tags: ["zones"]
+    summary: Update an existing zone.
+    description: |
+      Updates a single zone based on the ID supplied and owned by the current user.
+    operationId: updateZone
+    requestBody:
+      description: |
+        Fields to update on the given zone.
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '../models/zone.yml#/Zone'
+    responses:
+      '200':
+        description: |
+          given zone was updated successfully.
+  delete:
+    tags: ["zones"]
+    summary: Delete the zone.
+    description: |
+      Deletes a single zone and all associated records based on the ID supplied.
+    operationId: deleteZone
+    parameters:
+      - name: id
+        in: path
+        description: ID of the zone to delete
+        required: true
+        schema:
+          type: integer
+          format: int64
+    responses:
+      '204':
+        description: |
+          given zone was successfully deleted.
+
+ZoneByName:
+  get:
+    tags: ["zones"]
+    summary: Get details of a zone by its name.
+    description: |
+      Returns details of a specific zone by its name that the current user has access to.
+    operationId: getZoneByName
+    parameters:
+      - name: name
+        in: path
+        description: name of the zone to fetch
+        required: true
+        schema:
+          type: string
+          format: hostname
+    responses:
+      '200':
+        description: |
+          zone response.
+        content:
+          application/json:
+            schema:
+              $ref: '../models/zone.yml#/Zone'

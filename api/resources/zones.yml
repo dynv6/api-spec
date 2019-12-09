@@ -1,0 +1,39 @@
+---
+Zones:
+  get:
+    tags: ["zones"]
+    summary: Get a list of zones.
+    description: |
+      Returns a list of zones that the user has access to.
+    operationId: findZones
+    responses:
+      '200':
+        description: |
+          zones response.
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '../models/zone.yml#/Zone'
+  post:
+    tags: ["zones"]
+    summary: Register a new zone.
+    description: |
+      Registers a new zone for the current user.
+    operationId: addZone
+    requestBody:
+      description: |
+        Zone to register.
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '../models/zone.yml#/NewZone'
+    responses:
+      '200':
+        description: zone was created response
+        content:
+          application/json:
+            schema:
+              $ref: '../models/zone.yml#/Zone'

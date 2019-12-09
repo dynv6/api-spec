@@ -1,0 +1,37 @@
+---
+Record:
+  properties:
+    id:
+      type: integer
+      format: int64
+      readOnly: true
+    zone:
+      type: integer
+      format: int64
+      readOnly: true
+    name:
+      type: string
+      format: hostname
+      readOnly: true
+    type:
+      type: "string"
+      enum: ["A", "AAAA", "TXT"]
+      readOnly: true
+    data:
+      type: "string"
+
+NewRecord:
+  properties:
+    name:
+      type: string
+      format: hostname
+    type:
+      type: "string"
+      enum: ["A", "AAAA", "TXT"]
+    data:
+      type: "string"
+
+  required:
+    - name
+    - type
+    - data

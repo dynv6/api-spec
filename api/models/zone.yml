@@ -1,0 +1,40 @@
+---
+Zone:
+  properties:
+    id:
+      type: integer
+      format: int64
+      readOnly: true
+    name:
+      type: string
+      format: hostname
+      readOnly: true
+    ipv4address:
+      type: string
+      format: ipv4
+    ipv6prefix:
+        type: string
+        format: ipv6
+    createdAt:
+      type: string
+      format: date-time
+      readOnly: true
+    updatedAt:
+      type: string
+      format: date-time
+      readOnly: true
+
+NewZone:
+  properties:
+    name:
+      type: string
+      format: hostname
+    ipv4address:
+      type: string
+      format: ipv4
+    ipv6prefix:
+      type: string
+      format: ipv6
+
+  required:
+    - name

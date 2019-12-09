@@ -1,0 +1,49 @@
+---
+Records:
+  parameters:
+    - name: zoneID
+      in: path
+      description: ID of the parent zone to fetch the records for
+      required: true
+      schema:
+        type: integer
+        format: int64
+
+  get:
+    tags: ["records"]
+    summary: Get a list of records.
+    description: |
+      Returns a list of records for the given zone by its ID and is owned by the current user.
+    operationId: findRecords
+    responses:
+      '200':
+        description: |
+          records response
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '../models/record.yml#/Record'
+
+  post:
+    tags: ["records"]
+    summary: Add a new record.
+    description: |
+      Adds a new record to the given zone owned by the current user.
+    operationId: addRecord
+    requestBody:
+      description: |
+        Record to add.
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '../models/record.yml#/NewRecord'
+    responses:
+      '200':
+        description: zone was created response
+        content:
+          application/json:
+            schema:
+              $ref: '../models/record.yml#/Record'

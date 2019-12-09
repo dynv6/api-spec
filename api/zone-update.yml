@@ -1,0 +1,39 @@
+---
+openapi: '3.0.2'
+
+info:
+  title: dynv6 zone and records update api
+  version: '1.0'
+
+tags:
+  - name: zones
+  - name: records
+
+paths:
+  /zones:
+    $ref: './resources/zones.yml#/Zones'
+
+  /zones/{id}:
+    $ref: './resources/zone.yml#/ZoneByID'
+
+  /zones/by-name/{name}:
+    $ref: './resources/zone.yml#/ZoneByName'
+
+  /zones/{zoneID}/records:
+    $ref: './resources/records.yml#/Records'
+
+  /zones/{zoneID}/records/{recordID}:
+    $ref: './resources/record.yml#/Record'
+
+components:
+  schemas:
+    Zone:
+      $ref: './models/zone.yml#/Zone'
+    Record:
+      $ref: './models/record.yml#/Record'
+
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
