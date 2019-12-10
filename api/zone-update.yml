@@ -35,7 +35,7 @@ components:
       $ref: './models/record.yml#/Record'
 
   securitySchemes:
-    bearerAuth:
-      type: http
-      scheme: bearer
-      bearerFormat: JWT
+    Bearer:
+      type: apiKey
+      name: Authorization
+      in: header
