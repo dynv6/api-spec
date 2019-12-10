@@ -1,19 +1,19 @@
 ---
 ZoneByID:
+  parameters:
+    - name: id
+      in: path
+      description: ID of the zone to delete
+      required: true
+      schema:
+        type: integer
+        format: int64
   get:
     tags: ["zones"]
     summary: Get details of a zone.
     description: |
       Returns details of a specific zone by its ID that the current user has access to.
     operationId: getZoneByID
-    parameters:
-      - name: id
-        in: path
-        description: ID of the zone to fetch
-        required: true
-        schema:
-          type: integer
-          format: int64
     responses:
       '200':
         description: |
@@ -46,14 +46,6 @@ ZoneByID:
     description: |
       Deletes a single zone and all associated records based on the ID supplied.
     operationId: deleteZone
-    parameters:
-      - name: id
-        in: path
-        description: ID of the zone to delete
-        required: true
-        schema:
-          type: integer
-          format: int64
     responses:
       '204':
         description: |
