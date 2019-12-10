@@ -4,6 +4,8 @@ openapi: '3.0.2'
 info:
   title: dynv6 zone and records update api
   version: '1.0'
+  contact:
+    email: kontakt@digineo.de
 
 tags:
   - name: zones
