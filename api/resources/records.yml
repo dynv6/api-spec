@@ -25,6 +25,17 @@ Records:
               type: array
               items:
                 $ref: '../models/record.yml#/Record'
+      '401':
+        description: |
+          Error: Unauthorized
+      '403':
+        description: |
+          Error: Forbidden
+      '404':
+        description: |
+          Error: Zone not found
+    security:
+      - Bearer: []
 
   post:
     tags: ["records"]
@@ -47,3 +58,14 @@ Records:
           application/json:
             schema:
               $ref: '../models/record.yml#/Record'
+      '401':
+        description: |
+          Error: Unauthorized
+      '403':
+        description: |
+          Error: Forbidden
+      '404':
+        description: |
+          Error: Zone not found
+    security:
+      - Bearer: []

@@ -31,6 +31,17 @@ Record:
           application/json:
             schema:
               $ref: '../models/record.yml#/Record'
+      '401':
+        description: |
+          Error: Unauthorized
+      '403':
+        description: |
+          Error: Forbidden
+      '404':
+        description: |
+          Error: Record or zone not found
+    security:
+      - Bearer: []
 
   patch:
     tags: ["records"]
@@ -46,6 +57,17 @@ Record:
           application/json:
             schema:
               $ref: '../models/record.yml#/Record'
+      '401':
+        description: |
+          Error: Unauthorized
+      '403':
+        description: |
+          Error: Forbidden
+      '404':
+        description: |
+          Error: Record or zone not found
+    security:
+      - Bearer: []
 
   delete:
     tags: ["records"]
@@ -57,3 +79,14 @@ Record:
       '204':
         description: |
           given record was successfully deleted.
+      '401':
+        description: |
+          Error: Unauthorized
+      '403':
+        description: |
+          Error: Forbidden
+      '404':
+        description: |
+          Error: Record or zone not found
+    security:
+      - Bearer: []

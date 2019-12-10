@@ -8,6 +8,7 @@ ZoneByID:
       schema:
         type: integer
         format: int64
+
   get:
     tags: ["zones"]
     summary: Get details of a zone.
@@ -22,6 +23,18 @@ ZoneByID:
           application/json:
             schema:
               $ref: '../models/zone.yml#/Zone'
+      '401':
+        description: |
+          Error: Unauthorized
+      '403':
+        description: |
+          Error: Forbidden
+      '404':
+        description: |
+          Error: Zone not found
+    security:
+      - Bearer: []
+
   patch:
     tags: ["zones"]
     summary: Update an existing zone.
@@ -40,6 +53,18 @@ ZoneByID:
       '200':
         description: |
           given zone was updated successfully.
+      '401':
+        description: |
+          Error: Unauthorized
+      '403':
+        description: |
+          Error: Forbidden
+      '404':
+        description: |
+          Error: Zone not found
+    security:
+      - Bearer: []
+
   delete:
     tags: ["zones"]
     summary: Delete the zone.
@@ -50,6 +75,17 @@ ZoneByID:
       '204':
         description: |
           given zone was successfully deleted.
+      '401':
+        description: |
+          Error: Unauthorized
+      '403':
+        description: |
+          Error: Forbidden
+      '404':
+        description: |
+          Error: Zone not found
+    security:
+      - Bearer: []
 
 ZoneByName:
   get:
@@ -74,3 +110,14 @@ ZoneByName:
           application/json:
             schema:
               $ref: '../models/zone.yml#/Zone'
+      '401':
+        description: |
+          Error: Unauthorized
+      '403':
+        description: |
+          Error: Forbidden
+      '404':
+        description: |
+          Error: Zone not found
+    security:
+      - Bearer: []

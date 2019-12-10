@@ -16,6 +16,15 @@ Zones:
               type: array
               items:
                 $ref: '../models/zone.yml#/Zone'
+      '401':
+        description: |
+          Error: Unauthorized
+      '403':
+        description: |
+          Error: Forbidden
+    security:
+      - Bearer: []
+
   post:
     tags: ["zones"]
     summary: Register a new zone.
@@ -37,3 +46,11 @@ Zones:
           application/json:
             schema:
               $ref: '../models/zone.yml#/Zone'
+      '401':
+        description: |
+          Error: Unauthorized
+      '403':
+        description: |
+          Error: Forbidden
+    security:
+      - Bearer: []
