@@ -8,8 +8,8 @@ info:
     email: kontakt@digineo.de
 
 tags:
-  - name: zones
   - name: records
+  - name: zones
 
 paths:
   /zones:
