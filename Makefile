@@ -7,8 +7,12 @@ dist/zone-update.yml: $(SOURCES)
 
 .PHONY: lint
 lint:
-	speccy lint $(ROOT_SPEC)
+	docker run --rm \
+		-v ${PWD}:/project wework/speccy:0.11.0 \
+		lint /project/$(ROOT_SPEC)
 
 .PHONY: validate
 validate:
-	openapi-generator validate -i $(ROOT_SPEC)
+	docker run --rm \
+		-v ${PWD}:/local openapitools/openapi-generator-cli:v4.2.2 validate \
+		-i /local/$(ROOT_SPEC)
