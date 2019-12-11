@@ -16,3 +16,11 @@ validate:
 	docker run --rm \
 		-v ${PWD}:/local openapitools/openapi-generator-cli:v4.2.2 validate \
 		-i /local/$(ROOT_SPEC)
+
+.PHONY: docs
+docs:
+	docker run --rm \
+		-v ${PWD}:/local openapitools/openapi-generator-cli:v4.2.2 generate \
+		-g html \
+		-o /local/docs \
+		-i /local/$(ROOT_SPEC)
