@@ -50,7 +50,19 @@ Records:
       content:
         application/json:
           schema:
-            $ref: '../models/record.yml#/NewRecord'
+            oneOf:
+              - $ref: '../models/record.yml#/NewRecord'
+              - $ref: '../models/record.yml#/NewMXRecord'
+            discriminator:
+              propertyName: type
+              mapping:
+                A: '../models/record.yml#/NewRecord'
+                AAAA: '../models/record.yml#/NewRecord'
+                TXT: '../models/record.yml#/NewRecord'
+                CNAME: '../models/record.yml#/NewRecord'
+                SPF: '../models/record.yml#/NewRecord'
+                MX: '../models/record.yml#/NewMXRecord'
+
     responses:
       '200':
         description: zone was created response
@@ -58,6 +70,9 @@ Records:
           application/json:
             schema:
               $ref: '../models/record.yml#/Record'
+      '400':
+        description: |
+          Error: Malformed client data
       '401':
         description: |
           Error: Unauthorized

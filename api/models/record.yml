@@ -15,7 +15,7 @@ Record:
       readOnly: true
     type:
       type: "string"
-      enum: ["A", "AAAA", "TXT"]
+      enum: ["A", "AAAA", "TXT", "MX", "CNAME", "SPF"]
       readOnly: true
     data:
       type: "string"
@@ -27,7 +27,7 @@ NewRecord:
       format: hostname
     type:
       type: "string"
-      enum: ["A", "AAAA", "TXT"]
+      enum: ["A", "AAAA", "TXT", "CNAME", "SPF"]
     data:
       type: "string"
 
@@ -35,3 +35,20 @@ NewRecord:
     - name
     - type
     - data
+
+  discriminator:
+    propertyName: type
+
+NewMXRecord:
+  allOf:
+    - $ref: '#/NewRecord'
+    - type: object
+      properties:
+        type:
+          type: "string"
+          enum: ["MX"]
+        priority:
+          type: integer
+          format: int64
+      required:
+        - priority
