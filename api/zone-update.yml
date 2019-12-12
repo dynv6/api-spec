@@ -13,19 +13,19 @@ tags:
 
 paths:
   /zones:
-    $ref: './resources/zones.yml#/Zones'
+    $ref: './paths/zones.yml#/Zones'
 
   /zones/{id}:
-    $ref: './resources/zone.yml#/ZoneByID'
+    $ref: './paths/zone.yml#/ZoneByID'
 
   /zones/by-name/{name}:
-    $ref: './resources/zone.yml#/ZoneByName'
+    $ref: './paths/zone.yml#/ZoneByName'
 
   /zones/{zoneID}/records:
-    $ref: './resources/records.yml#/Records'
+    $ref: './paths/records.yml#/Records'
 
   /zones/{zoneID}/records/{recordID}:
-    $ref: './resources/record.yml#/Record'
+    $ref: './paths/record.yml#/Record'
 
 components:
   schemas:
