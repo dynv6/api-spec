@@ -62,6 +62,13 @@ ZoneByID:
       '404':
         description: |
           Error: Zone not found
+      '422':
+        description: |
+          Error: Field value validation failed
+        content:
+          application/json:
+            schema:
+              $ref: '../models/error.yml#/ErrorResponse'
     security:
       - Bearer: []
 

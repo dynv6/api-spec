@@ -1,0 +1,42 @@
+---
+Error:
+  type: object
+  properties:
+    name:
+      type: string
+    message:
+      type: string
+  required:
+    - name
+    - message
+
+ValidationError:
+  allOf:
+    - $ref: '#/Error'
+    - type: object
+      properties:
+        fields:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              message:
+                type: string
+            required:
+              - name
+              - message
+      required:
+        - fields
+
+ErrorResponse:
+  properties:
+    error:
+      oneOf:
+        - $ref: '#/Error'
+        - $ref: '#/ValidationError'
+      discriminator:
+        propertyName: name
+        mapping:
+          ValidationError: '#/ValidationError'

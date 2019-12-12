@@ -52,5 +52,12 @@ Zones:
       '403':
         description: |
           Error: Forbidden
+      '422':
+        description: |
+          Error: Field value validation failed
+        content:
+          application/json:
+            schema:
+              $ref: '../models/error.yml#/ErrorResponse'
     security:
       - Bearer: []

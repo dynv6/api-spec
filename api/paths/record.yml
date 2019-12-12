@@ -66,6 +66,13 @@ Record:
       '404':
         description: |
           Error: Record or zone not found
+      '422':
+        description: |
+          Error: Field value validation failed
+        content:
+          application/json:
+            schema:
+              $ref: '../models/error.yml#/ErrorResponse'
     security:
       - Bearer: []
 

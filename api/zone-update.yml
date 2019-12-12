@@ -31,8 +31,15 @@ components:
   schemas:
     Zone:
       $ref: './models/zone.yml#/Zone'
+
     Record:
       $ref: './models/record.yml#/Record'
+
+    ErrorResponse:
+      $ref: './models/error.yml#/ErrorResponse'
+
+    ValidationError:
+      $ref: './models/error.yml#/ValidationError'
 
   securitySchemes:
     Bearer:
