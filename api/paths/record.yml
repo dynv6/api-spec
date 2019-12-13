@@ -1,6 +1,5 @@
 ---
 Record:
-  summary: This is the Summary
   parameters:
     - name: zoneID
       in: path
