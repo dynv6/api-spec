@@ -50,18 +50,7 @@ Records:
       content:
         application/json:
           schema:
-            oneOf:
-              - $ref: '../models/record.yml#/NewRecord'
-              - $ref: '../models/record.yml#/NewMXRecord'
-            discriminator:
-              propertyName: type
-              mapping:
-                A: '../models/record.yml#/NewRecord'
-                AAAA: '../models/record.yml#/NewRecord'
-                TXT: '../models/record.yml#/NewRecord'
-                CNAME: '../models/record.yml#/NewRecord'
-                SPF: '../models/record.yml#/NewRecord'
-                MX: '../models/record.yml#/NewMXRecord'
+            $ref: '../models/record.yml#/NewRecord'
 
     responses:
       '200':
