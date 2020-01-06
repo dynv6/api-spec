@@ -1,5 +1,5 @@
 SOURCEDIR := api
-ROOT_SPEC := $(SOURCEDIR)/zone-update.yml
+ROOT_SPEC := $(SOURCEDIR)/openapi.yml
 SOURCES := $(shell find $(SOURCEDIR) -name '*.yml')
 
 dist/zone-update.yml: $(SOURCES)

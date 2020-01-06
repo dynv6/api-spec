@@ -2,10 +2,22 @@
 openapi: '3.0.2'
 
 info:
-  title: dynv6 zone and records update api
-  version: '1.0'
+  title: REST API for dynv6
+  description: |
+    This is a preview of our HTTP [REST][] API for dynv6.com. Currently,
+    we're supporting updates to zones and records (which should cover the
+    bulk of use cases).
+
+    Feel free to drop us a note if you find a bug or if you miss a feature.
+
+    [REST]: https://en.wikipedia.org/wiki/Representational_state_transfer
+  version: '0.1.0'
   contact:
     email: kontakt@digineo.de
+    url: https://dynv6.com
+
+servers:
+  - url: https://dynv6.com/api/v1
 
 tags:
   - name: records
