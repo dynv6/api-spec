@@ -1,0 +1,8 @@
+{
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "shins": "^2.4.1-0",
+    "widdershins": "^3.6.7"
+  }
+}

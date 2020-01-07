@@ -35,9 +35,11 @@ docs/openapi.json: $(SOURCES)
 			-o /local/docs \
 			-i /local/$(ROOT_SPEC)
 
-docs/index.html: $(SOURCES)
-	docker run --rm -v $(PWD):/local \
-		openapitools/openapi-generator-cli:v$(OPENAPI_GEN_VERSION) generate \
-			-g html \
-			-o /local/docs \
-			-i /local/$(ROOT_SPEC)
+docs/index.html: docs/openapi.json .have-publisher
+	docker run --rm -v $(PWD)/docs:/docs \
+		-u $(shell id -u):$(shell id -g) \
+		dynv6/publisher:latest
+
+.have-publisher: $(wildcard publisher/*)
+	cd publisher && docker build --pull --tag dynv6/publisher:latest .
+	touch .have-publisher

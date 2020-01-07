@@ -3,3 +3,6 @@
 
 /docs/*
 !/docs/.gitkeep
+
+/node_modules
+/.have-publisher
