@@ -28,7 +28,7 @@ Record:
           type: integer
           format: int64
           readOnly: true
-        zone:
+        zoneID:
           type: integer
           format: int64
           readOnly: true
