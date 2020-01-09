@@ -17,7 +17,7 @@ info:
     url: https://dynv6.com
 
 servers:
-  - url: https://dynv6.com/api/v1
+  - url: https://dynv6.com/api/v2
 
 tags:
   - name: records
