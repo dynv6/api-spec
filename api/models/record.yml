@@ -36,6 +36,23 @@ RecordRead:
     - $ref: '#/Record'
     - type: 'object'
       properties:
+        expandedData:
+          type: string
+          readOnly: true
+          description: >-
+            This field, when present, contains an expanded value of the `data` field.
+            Examples inlude, but are not limited to:
+
+            - Full qualified names for `CNAME` and `MX` records. Unless the data field
+              itself is fully qualified (i.e. it ends in a `.`), the `expandedData` will
+              concatenate a `.` and the parent zone's name.
+            - Full IPv6 addresses, when `data` is a MAC address. The MAC address gets
+              translated into EUI-64 and will be prefixed with the parent zone's IPv6
+              prefix.
+
+            If the expansion results in the same value as `data` (or if the expansion
+            fails for some reason), the `expandedData` field will be absent.
+
         id:
           type: integer
           format: int64
