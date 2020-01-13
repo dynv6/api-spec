@@ -1,12 +1,13 @@
 ---
-NewRecord:
+RecordFieldType:
+  type: "string"
+  enum: ["A", "AAAA", "CNAME", "MX", "SPF", "TXT"]
+
+Record:
   properties:
     name:
       type: string
       format: hostname
-    type:
-      type: "string"
-      enum: ["A", "AAAA", "CNAME", "MX", "SPF", "TXT"]
     priority:
       type: integer
       format: int64
@@ -14,15 +15,26 @@ NewRecord:
       maximum: 65535
     data:
       type: "string"
-  required:
-    - name
-    - type
-    - data
 
-Record:
+NewRecord:
   allOf:
-    - $ref: '#/NewRecord'
-    - type: object
+    - $ref: '#/Record'
+    - type: 'object'
+      properties:
+        type:
+          allOf:
+            - $ref: '#/RecordFieldType'
+            - writeOnly: true
+
+      required:
+        - type
+        - name
+        - data
+
+RecordRead:
+  allOf:
+    - $ref: '#/Record'
+    - type: 'object'
       properties:
         id:
           type: integer
@@ -32,3 +44,15 @@ Record:
           type: integer
           format: int64
           readOnly: true
+
+        type:
+          allOf:
+            - $ref: '#/RecordFieldType'
+            - readOnly: true
+
+      required:
+        - type
+        - name
+        - data
+        - id
+        - zoneID

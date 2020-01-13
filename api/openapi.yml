@@ -45,7 +45,7 @@ components:
       $ref: './models/zone.yml#/Zone'
 
     Record:
-      $ref: './models/record.yml#/Record'
+      $ref: './models/record.yml#/RecordRead'
 
     ErrorResponse:
       $ref: './models/error.yml#/ErrorResponse'

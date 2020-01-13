@@ -24,7 +24,7 @@ Records:
             schema:
               type: array
               items:
-                $ref: '../models/record.yml#/Record'
+                $ref: '../models/record.yml#/RecordRead'
       '401':
         description: |
           Error: Unauthorized
@@ -58,7 +58,7 @@ Records:
         content:
           application/json:
             schema:
-              $ref: '../models/record.yml#/Record'
+              $ref: '../models/record.yml#/RecordRead'
       '400':
         description: |
           Error: Malformed client data

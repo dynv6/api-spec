@@ -29,7 +29,7 @@ Record:
         content:
           application/json:
             schema:
-              $ref: '../models/record.yml#/Record'
+              $ref: '../models/record.yml#/RecordRead'
       '401':
         description: |
           Error: Unauthorized
@@ -55,7 +55,7 @@ Record:
         content:
           application/json:
             schema:
-              $ref: '../models/record.yml#/Record'
+              $ref: '../models/record.yml#/RecordRead'
       '401':
         description: |
           Error: Unauthorized
