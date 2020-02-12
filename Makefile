@@ -35,10 +35,11 @@ docs/openapi.json: $(SOURCES)
 			-o /local/docs \
 			-i /local/$(ROOT_SPEC)
 
-docs/index.html: docs/openapi.json .have-publisher
-	docker run --rm -v $(PWD)/docs:/docs \
+docs/index.html: .have-publisher
+	docker run --rm -v $(PWD):/local \
 		-u $(shell id -u):$(shell id -g) \
-		dynv6/publisher:latest
+		dynv6/publisher:latest \
+		npx redoc-cli bundle -o /local/docs/index.html /local/api/openapi.yml
 
 .have-publisher: $(wildcard publisher/*)
 	cd publisher && docker build --pull --tag dynv6/publisher:latest .

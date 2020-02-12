@@ -4,5 +4,5 @@
 /docs/*
 !/docs/.gitkeep
 
-/node_modules
+/publisher/node_modules
 /.have-publisher
