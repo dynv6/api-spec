@@ -1,7 +1,7 @@
 ---
 RecordFieldType:
   type: "string"
-  enum: ["A", "AAAA", "CNAME", "MX", "SPF", "TXT"]
+  enum: ["A", "AAAA", "CAA", "CNAME", "MX", "SPF", "TXT"]
 
 Record:
   properties:
@@ -13,6 +13,10 @@ Record:
       format: int64
       minimum: 0
       maximum: 65535
+    flags:
+      type: integer
+    tag:
+      type: string
     data:
       type: "string"
 
