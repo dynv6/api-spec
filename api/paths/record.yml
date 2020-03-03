@@ -18,14 +18,14 @@ Record:
 
   get:
     tags: ["records"]
-    summary: Get details for a record.
+    summary: Get details for a record
     description: |
       Returns details of the specified record by its ID that the current user has access to.
     operationId: getRecordByID
     responses:
       '200':
         description: |
-          record response
+          Record
         content:
           application/json:
             schema:
@@ -44,14 +44,14 @@ Record:
 
   patch:
     tags: ["records"]
-    summary: Update an existing record.
+    summary: Update an existing record
     description: |
       Updates the given record based on the ID supplied and owned by the current user.
     operationId: updateRecord
     responses:
       '200':
         description: |
-          updated record response
+          Updated record
         content:
           application/json:
             schema:
@@ -77,14 +77,14 @@ Record:
 
   delete:
     tags: ["records"]
-    summary: Delete a record.
+    summary: Delete a record
     description: |
       Deletes the given record based on the ID supplied and owned by the current user.
     operationId: deleteRecord
     responses:
       '204':
         description: |
-          given record was successfully deleted.
+          Record was successfully deleted
       '401':
         description: |
           Error: Unauthorized

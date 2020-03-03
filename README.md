@@ -1,3 +1,10 @@
-# dynv6 api
+# dynv6 API specification
 
-api documentation spanning backend, frontend and clients.
+API documentation spanning backend, frontend and clients.
+
+Goto <https://dynv6.github.com/api-spec/> to browse the documentation.
+
+---
+
+[dynv6.com](https://dynv6.com/) is a free service by
+[Digineo GmbH](https://www.digineo.de/)

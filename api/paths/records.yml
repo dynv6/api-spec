@@ -11,14 +11,14 @@ Records:
 
   get:
     tags: ["records"]
-    summary: Get a list of records.
+    summary: Get a list of records
     description: |
       Returns a list of records for the given zone by its ID and is owned by the current user.
     operationId: findRecords
     responses:
       '200':
         description: |
-          Records response
+          List of records
         content:
           application/json:
             schema:
@@ -39,7 +39,7 @@ Records:
 
   post:
     tags: ["records"]
-    summary: Add a new record.
+    summary: Add a new record
     description: |
       Adds a new record to the given zone owned by the current user.
     operationId: addRecord
@@ -54,7 +54,8 @@ Records:
 
     responses:
       '200':
-        description: Record was created response
+        description: |
+          Record was created
         content:
           application/json:
             schema:

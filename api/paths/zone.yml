@@ -11,7 +11,7 @@ ZoneByID:
 
   get:
     tags: ["zones"]
-    summary: Get details of a zone.
+    summary: Get details of a zone
     description: |
       Returns details of a specific zone by its ID that the current user has access to.
     operationId: getZoneByID
@@ -37,7 +37,7 @@ ZoneByID:
 
   patch:
     tags: ["zones"]
-    summary: Update an existing zone.
+    summary: Update an existing zone
     description: |
       Updates a single zone based on the ID supplied and owned by the current user.
     operationId: updateZone
@@ -52,7 +52,7 @@ ZoneByID:
     responses:
       '200':
         description: |
-          given zone was updated successfully.
+          Zone was updated successfully
       '401':
         description: |
           Error: Unauthorized
@@ -74,14 +74,14 @@ ZoneByID:
 
   delete:
     tags: ["zones"]
-    summary: Delete the zone.
+    summary: Delete the zone
     description: |
       Deletes a single zone and all associated records based on the ID supplied.
     operationId: deleteZone
     responses:
       '204':
         description: |
-          given zone was successfully deleted.
+          Zone was successfully deleted
       '401':
         description: |
           Error: Unauthorized
@@ -97,7 +97,7 @@ ZoneByID:
 ZoneByName:
   get:
     tags: ["zones"]
-    summary: Get details of a zone by its name.
+    summary: Get details of a zone by its name
     description: |
       Returns details of a specific zone by its name that the current user has access to.
     operationId: getZoneByName
@@ -112,7 +112,7 @@ ZoneByName:
     responses:
       '200':
         description: |
-          zone response.
+          Zone response
         content:
           application/json:
             schema:

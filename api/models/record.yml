@@ -9,16 +9,38 @@ Record:
       type: string
       format: hostname
     priority:
+      description: |
+        The `priority` field defines an order. Given multiple records with a
+        priority, the ones with lower values will generally be preferred.
+        Usually, a client fetches all records, sorts them by priority and
+        tries one after the other.
+
+        **Note:** The `priority` field is currently only supported for
+        `MX` records. Other record types silently ignore this field.
       type: integer
       format: int64
       minimum: 0
       maximum: 65535
     flags:
+      description: |
+        The `flags` field represents a bit-field used for extensions for
+        `CAA` records. RFC 8659 currently only specifies a value of 128
+        as *issuer critical*.
+
+        **Note:** This field is only supported for `CAA` records. Other
+        record types silently ignore this field.
       type: integer
     tag:
-      type: string
-    data:
+      description: |
+        **Note:** This field is only supported for `CAA` records. Other
+        record types silently ignore this field.
       type: "string"
+      enum: ["issue", "issuewild", "iodef"]
+    data:
+      description: |
+        The value (or payload) for a record. For `CNAME` records, this might
+        be a hostname, or an IP address for `A` and `AAAA` records, etc.
+      type: string
 
 NewRecord:
   allOf:

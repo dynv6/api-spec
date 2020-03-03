@@ -58,5 +58,26 @@ components:
 
   securitySchemes:
     Bearer:
+      description: |
+        To authenticate with the REST API you first need to
+        [create an HTTP token](https://dynv6.com/keys/). An API key is
+        restricted to your account, i.e. you cannot edit zones and records
+        of other users. You may optionally further restrict an HTTP token
+        to a single zone. You can create as many keys as you wish.
+
+        Then add the following header to your HTTP request:
+
+            Authorization: Bearer YOUR_TOKEN
+
+        (replace `YOUR_TOKEN` with, well, your token). If the requests sent
+        to our servers contain an invalid token, you'll generally receive
+        a `401 Unauthorized` response.
+
+        Example with cURL:
+
+            curl \
+                -H "Authorization: Bearer YOUR_TOKEN" \
+                -H "Accept: application/json" \
+                https://dynv6.com/api/zones
       type: http
       scheme: bearer
