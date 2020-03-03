@@ -16,7 +16,7 @@ info:
     email:    kontakt@digineo.de
     url:      https://dynv6.com
   x-logo:
-    url:      https://dynv6.github.io/api-spec/dynv6.svg
+    url:      https://dynv6.github.io/api-spec/dynv6.png
     altText:  "dynv6 logo"
 
 servers:

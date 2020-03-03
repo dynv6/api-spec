@@ -3,7 +3,7 @@
 
 /docs/*
 !/docs/.gitkeep
-!/docs/dynv6.svg
+!/docs/dynv6.png
 
 /publisher/node_modules
 /.have-publisher
