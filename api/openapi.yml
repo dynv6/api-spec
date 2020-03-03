@@ -11,10 +11,13 @@ info:
     Feel free to drop us a note if you find a bug or if you miss a feature.
 
     [REST]: https://en.wikipedia.org/wiki/Representational_state_transfer
-  version: '0.1.0'
+  version:    '0.1.0'
   contact:
-    email: kontakt@digineo.de
-    url: https://dynv6.com
+    email:    kontakt@digineo.de
+    url:      https://dynv6.com
+  x-logo:
+    url:      https://dynv6.github.io/api-spec/dynv6.svg
+    altText:  "dynv6 logo"
 
 servers:
   - url: https://dynv6.com/api/v2
