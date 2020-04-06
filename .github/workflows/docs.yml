@@ -4,6 +4,7 @@ on:
   push:
     branches:
     - master
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-18.04
@@ -16,6 +17,8 @@ jobs:
     - name: Build Documentation
       run: make docs/index.html
 
+    # private key: https://github.com/dynv6/api-spec/settings/secrets
+    # public key: https://github.com/dynv6/api-spec/settings/keys
     - name: Install SSH Client
       uses: webfactory/ssh-agent@v0.2.0
       with:
