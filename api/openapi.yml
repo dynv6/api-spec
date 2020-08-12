@@ -1,5 +1,5 @@
 ---
-openapi: '3.0.2'
+openapi: '3.0.3'
 
 info:
   title: REST API for dynv6
@@ -11,7 +11,7 @@ info:
     Feel free to drop us a note if you find a bug or if you miss a feature.
 
     [REST]: https://en.wikipedia.org/wiki/Representational_state_transfer
-  version:    '0.1.0'
+  version:    '0.2.0'
   contact:
     email:    kontakt@digineo.de
     url:      https://dynv6.com

@@ -1,7 +1,7 @@
 ---
 RecordFieldType:
   type: "string"
-  enum: ["A", "AAAA", "CAA", "CNAME", "MX", "SPF", "TXT"]
+  enum: ["A", "AAAA", "CAA", "CNAME", "MX", "SPF", "SRV", "TXT"]
 
 Record:
   properties:
@@ -16,7 +16,23 @@ Record:
         tries one after the other.
 
         **Note:** The `priority` field is currently only supported for
-        `MX` records. Other record types silently ignore this field.
+        `MX` and `SRV` records. Other record types silently ignore this field.
+      type: integer
+      format: int64
+      minimum: 0
+      maximum: 65535
+    port:
+      description: |
+        The `port` the target port for a `SRV` record.
+        Other record types silently ignore this field.
+      type: integer
+      format: int64
+      minimum: 0
+      maximum: 65535
+    weight:
+      description: |
+        The `weight` the weight for a `SRV` record.
+        Other record types silently ignore this field.
       type: integer
       format: int64
       minimum: 0
@@ -38,7 +54,7 @@ Record:
       enum: ["issue", "issuewild", "iodef"]
     data:
       description: |
-        The value (or payload) for a record. For `CNAME` records, this might
+        The value (or payload) for a record. For `CNAME`, `MX`, `SRV` records, this might
         be a hostname, or an IP address for `A` and `AAAA` records, etc.
       type: string
 
