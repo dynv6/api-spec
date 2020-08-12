@@ -3,7 +3,7 @@ ROOT_SPEC := $(SOURCEDIR)/openapi.yml
 SOURCES := $(shell find $(SOURCEDIR) -name '*.yml')
 
 SPECCY_VERSION      = 0.11.0
-OPENAPI_GEN_VERSION = 4.2.2
+OPENAPI_GEN_VERSION = 4.3.1
 
 .PHONY: lint
 lint:
