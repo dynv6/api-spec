@@ -25,15 +25,16 @@ servers:
 tags:
   - name: records
   - name: zones
+  - name: port_mappings
 
 paths:
   /zones:
     $ref: './paths/zones.yml#/Zones'
 
-  /zones/{id}:
+  /zones/{zoneID}:
     $ref: './paths/zone.yml#/ZoneByID'
 
-  /zones/by-name/{name}:
+  /zones/by-name/{zoneName}:
     $ref: './paths/zone.yml#/ZoneByName'
 
   /zones/{zoneID}/records:
@@ -42,6 +43,12 @@ paths:
   /zones/{zoneID}/records/{recordID}:
     $ref: './paths/record.yml#/Record'
 
+  /zones/{zoneID}/port_mappings:
+    $ref: './paths/port_mappings.yml#/PortMappings'
+
+  /zones/{zoneID}/port_mappings/{portMappingID}:
+    $ref: './paths/port_mapping.yml#/PortMapping'
+
 components:
   schemas:
     Zone:
@@ -49,6 +56,9 @@ components:
 
     Record:
       $ref: './models/record.yml#/RecordRead'
+
+    PortMapping:
+      $ref: './models/port_mapping.yml#/PortMappingRead'
 
     ErrorResponse:
       $ref: './models/error.yml#/ErrorResponse'

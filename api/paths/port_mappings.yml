@@ -1,0 +1,83 @@
+---
+PortMappings:
+  parameters:
+    - name: zoneID
+      in: path
+      description: ID of the parent zone to fetch the port_mappings for
+      required: true
+      schema:
+        type: integer
+        format: int64
+
+  get:
+    tags: ["port_mappings"]
+    summary: Get a list of port mappings
+    description: |
+      Returns a list of port_mappings for the given zone by its ID and is owned by the current user.
+    operationId: findPortMappings
+    responses:
+      '200':
+        description: |
+          List of port_mappings
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '../models/port_mapping.yml#/PortMappingRead'
+      '401':
+        description: |
+          Error: Unauthorized
+      '403':
+        description: |
+          Error: Forbidden
+      '404':
+        description: |
+          Error: Zone not found
+    security:
+      - Bearer: []
+
+  post:
+    tags: ["port_mappings"]
+    summary: Add a port mapping
+    description: |
+      Adds a port mapping to the given zone owned by the current user.
+    operationId: addPortMapping
+    requestBody:
+      description: |
+        PortMapping to add.
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '../models/port_mapping.yml#/NewPortMapping'
+
+    responses:
+      '200':
+        description: |
+          Port mapping was created
+        content:
+          application/json:
+            schema:
+              $ref: '../models/port_mapping.yml#/PortMappingRead'
+      '400':
+        description: |
+          Error: Malformed client data
+      '401':
+        description: |
+          Error: Unauthorized
+      '403':
+        description: |
+          Error: Forbidden
+      '404':
+        description: |
+          Error: PortMapping not found
+      '422':
+        description: |
+          Error: Field value validation failed
+        content:
+          application/json:
+            schema:
+              $ref: '../models/error.yml#/ErrorResponse'
+    security:
+      - Bearer: []

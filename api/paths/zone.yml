@@ -102,7 +102,7 @@ ZoneByName:
       Returns details of a specific zone by its name that the current user has access to.
     operationId: getZoneByName
     parameters:
-      - name: name
+      - name: zoneName
         in: path
         description: name of the zone to fetch
         required: true

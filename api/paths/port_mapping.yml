@@ -1,0 +1,80 @@
+---
+PortMapping:
+  parameters:
+    - name: zoneID
+      in: path
+      description: ID of the parent zone under which the port mapping will be created.
+      required: true
+      schema:
+        type: integer
+        format: int64
+    - name: portMappingID
+      in: path
+      description: ID of the port mapping in question.
+      required: true
+      schema:
+        type: integer
+        format: int64
+
+  patch:
+    tags: ["port_mappings"]
+    summary: Update an existing port mapping
+    description: |
+      Updates the given port_mapping based on the ID supplied and owned by the current user.
+    operationId: updatePortMapping
+    requestBody:
+      description: |
+        Fields to update on the given port mapping.
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '../models/port_mapping.yml#/PortMapping'
+    responses:
+      '200':
+        description: |
+          Updated port mapping
+        content:
+          application/json:
+            schema:
+              $ref: '../models/port_mapping.yml#/PortMappingRead'
+      '401':
+        description: |
+          Error: Unauthorized
+      '403':
+        description: |
+          Error: Forbidden
+      '404':
+        description: |
+          Error: PortMapping or zone not found
+      '422':
+        description: |
+          Error: Field value validation failed
+        content:
+          application/json:
+            schema:
+              $ref: '../models/error.yml#/ErrorResponse'
+    security:
+      - Bearer: []
+
+  delete:
+    tags: ["port_mappings"]
+    summary: Delete a port_mapping
+    description: |
+      Deletes the given port_mapping based on the ID supplied and owned by the current user.
+    operationId: deletePortMapping
+    responses:
+      '204':
+        description: |
+          PortMapping was successfully deleted
+      '401':
+        description: |
+          Error: Unauthorized
+      '403':
+        description: |
+          Error: Forbidden
+      '404':
+        description: |
+          Error: PortMapping or zone not found
+    security:
+      - Bearer: []

@@ -1,0 +1,47 @@
+---
+Protocol:
+  type: "string"
+  enum: [TCP, UDP, SFTP]
+
+PortMapping:
+  properties:
+    destinationPort:
+      description: |
+        The `destination port`
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 65535
+
+    protocols:
+      description: |
+        At least one protocol has to be enabled.
+      type: "array"
+      items:
+        type: Protocol
+        $ref: '#/Protocol'
+
+    recordID:
+      description: |
+        The ID of the AAAA record to use for the destination address.
+      type: integer
+      format: int64
+
+NewPortMapping:
+  allOf:
+    - $ref: '#/PortMapping'
+    - type: object
+      required:
+        - destinationPort
+        - protocols
+        - recordID
+
+PortMappingRead:
+  allOf:
+    - $ref: '#/PortMapping'
+    - type: object
+      properties:
+        publicPort:
+          type: integer
+          format: int64
+          readOnly: true
