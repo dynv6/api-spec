@@ -79,5 +79,8 @@ PortMappings:
           application/json:
             schema:
               $ref: '../models/error.yml#/ErrorResponse'
+      '429':
+        description: |
+          Zone limit reached: You may only create up to 20 port mappings per zone.
     security:
       - Bearer: []
