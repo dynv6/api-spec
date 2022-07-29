@@ -171,10 +171,10 @@
     require-from-string "^2.0.2"
     uri-js "^4.2.2"
 
-"@redocly/openapi-core@^1.0.0-beta.97":
-  version "1.0.0-beta.100"
-  resolved "https://registry.yarnpkg.com/@redocly/openapi-core/-/openapi-core-1.0.0-beta.100.tgz#f81a0ff44ce08ea08a8c51525c71f3c3ce818ca5"
-  integrity sha512-jf0UKP1nmuAwqe3I2D1FPZYDhcOrnnAQM36wYkPWZSYzO2OQv2Gcfms2g7vSQeq8+yK+8SZk+vP35lNR+IF70g==
+"@redocly/openapi-core@^1.0.0-beta.104":
+  version "1.0.0-beta.105"
+  resolved "https://registry.yarnpkg.com/@redocly/openapi-core/-/openapi-core-1.0.0-beta.105.tgz#bf8ad66c086cadfe22dbaa3027494ab74f5297bd"
+  integrity sha512-8uYDMcqBOPhFgjRlg5uetW/E2uTVVRpk+YsJhaH78ZNuzBkQP5Waw5s8P8ym6myvHs5me8l5AdniY/ePLMT5xg==
   dependencies:
     "@redocly/ajv" "^8.6.4"
     "@types/node" "^14.11.8"
@@ -1267,10 +1267,10 @@ readdirp@~3.6.0:
   dependencies:
     picomatch "^2.2.1"
 
-redoc-cli@^0.13.16:
-  version "0.13.16"
-  resolved "https://registry.yarnpkg.com/redoc-cli/-/redoc-cli-0.13.16.tgz#ccc9d9d29100f7da84c17628d006cf30eff2a30f"
-  integrity sha512-/rqkqJV1r5xgnEFh6cSmv+sZuo/TGCXKRBKZwoC0rLny5N6WGx9YykJhe1jSM4XRbK3VDfrQtOJmPCaI1ut6gg==
+redoc-cli@^0.13.17:
+  version "0.13.17"
+  resolved "https://registry.yarnpkg.com/redoc-cli/-/redoc-cli-0.13.17.tgz#c69ffe5e8cb91914e1c71eccb4af9caf5363809b"
+  integrity sha512-9nlebYPiysVnuSJSoXAfEmwy8eHMsp14Rt4oRKqXaCz00O6chMnveZpzTB6APMVwA9gtNbiGO3Rbsm5PQQExzQ==
   dependencies:
     chokidar "^3.5.1"
     handlebars "^4.7.7"
@@ -1280,16 +1280,16 @@ redoc-cli@^0.13.16:
     node-libs-browser "^2.2.1"
     react "^17.0.1"
     react-dom "^17.0.1"
-    redoc "2.0.0-rc.72"
+    redoc "2.0.0-rc.74"
     styled-components "^5.3.0"
     yargs "^17.3.1"
 
-redoc@2.0.0-rc.72:
-  version "2.0.0-rc.72"
-  resolved "https://registry.yarnpkg.com/redoc/-/redoc-2.0.0-rc.72.tgz#9eee22104d652b4a90e19ca50009b0b623a7b5b3"
-  integrity sha512-IX/WvVh4N3zwo4sAjnQFz6ffIUd6G47hcflxPtrpxblJaeOy0MBSzzY8f179WjssWPYcSmmndP5v0hgEXFiimg==
+redoc@2.0.0-rc.74:
+  version "2.0.0-rc.74"
+  resolved "https://registry.yarnpkg.com/redoc/-/redoc-2.0.0-rc.74.tgz#29b30002ace4863a5a5f21f44af9369ff047266e"
+  integrity sha512-OeOWGcbmVdfVgN//7ispiRX0fhD7Gk3tWcERugyFfP8QX/1Pttw3jRYSXmiB0i+H48zFn20K1cMppBp/qzm5xQ==
   dependencies:
-    "@redocly/openapi-core" "^1.0.0-beta.97"
+    "@redocly/openapi-core" "^1.0.0-beta.104"
     classnames "^2.3.1"
     decko "^1.2.0"
     dompurify "^2.2.8"
