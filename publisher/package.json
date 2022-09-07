@@ -2,6 +2,6 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
-    "redoc-cli": "^0.13.16"
+    "redoc-cli": "^0.13.20"
   }
 }
